@@ -1,42 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
-</head>
-<body>
-    <form action="index.php" method="get">
-        <label>Username: </label><br>
-        <input type="text" name="username"><br>
-        <label>Password: </label><br>
-        <input type="password" name="password"><br>
-        <input type="submit" value="Log in">
-    </form>
-</body>
-</html>
-
 <?php
-    /*
-        $_GET, $_POST = Special variables used to collect data from an HTML form
-                        data is sent to the file in the action attribute of <form>
-                        <form action="some_file.php" method="get">
+    $username = "Bro Code";
+    $phone = "123-456-789";
 
-        $_GET         = Data is appended to the url
-                        NOT SECURE
-                        char limit
-                        Bookmark is possible w/ values
-                        GET requests can be cached
-                        Better for a search page
+    // They convert all the characters to lower case or upper case.
+    // These 2 are ASCII-only
+    // $username = strtolower($username);
+    // $username = strtoupper($username);
 
-        $_POST        = Data is packaged inside the body of the HTTP request
-                        MORE SECURE
-                        No data limit
-                        Cannot bookmark
-                        POST requests are not cached
-                        Better for submitting credentials
-    */
+    // Meanwhile, these 2 allow you to use different encondings, like UTF-8
+    // $username = mb_strtolower($username, "UTF-8");
+    // $username = mb_strtolower($username, "UTF-8");
 
-    echo "{$_GET["username"]}<br>";
-    echo "{$_GET["password"]}<br>";
+    // It removes whitespaces before and after other characters
+    // $username = trim($username);
+
+    // It adds the third parameter and the end of the string, as many times as
+    // the second parameter says
+    // $username = str_pad($username, 20, "0");
+
+    // It replaces the character on the first parameter with the one on the
+    // second parameter, from the variable in the third parameter
+    // $phone = str_replace("-", "", $phone);
+
+    // It returns a string with the same characters in the opposite order
+    // $username = strrev($username);
+
+    // It returns a string with the same characters in a RANDOM order
+    // $username = str_shuffle($username);
+
+    // Returns 0 if both strings are equal, 1 or -1 otherwise
+    // $equals = strcmp($username, "BroCode");
+
+    // Returns the amount of characters in a string
+    // $count = strlen($username);
+
+    // Returns the first position in the string where the character is
+    // $count = strpos($username, " ");
+
+    // It returns a string of a portion of the first parameter.
+    // The second parameter tells where the first character to grab is,
+    // the third parameter tells how many characters to grab, from the one in
+    // parameter 2 to one less than the number
+    // $first_name = substr($username, 0, 2); // from "Bro Code" it returns "Br"
+
+    // It returns an array. The first parameter "separator" is where the string
+    // should be split. This separator is not included in the array elements
+    // $full_name = explode(" ", $username);
+
+    // This one turns an array into a string
+    // $full_name = implode($full_name);
+
+
+
+    echo $full_name;
 ?>
